@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Prison DBMS</title>
+</head>
+<body>
+    <!-- Display DB status -->
+    <h1>Database Connection Status:
+        <span id="dbStatus"> </span>
+        <img id="loadingGif" class="loading-gif" src="loading_100px.gif" alt="Loading...">
+    </h1>
+
+    <br><hr><br>
+
+    <!-- Inmate Management Section -->
+    <h2>Inmate Management</h2>
+    <button onclick="initDatabase()">Initialize Database</button>
+
+    <br><hr><br>
+
+    <h2>📅 Upcoming Releases (Next 30 Days)</h2>
+    <button onclick="loadUpcomingReleases()">Refresh</button>
+    <table id="releaseTable" border="1">
+        <thead>
+            <tr>
+                <th>Inmate ID</th>
+                <th>Holding Cell</th>
+                <th>Health Num</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+
+    <!-- Inmate Form -->
+    <form id="inmateForm">
+        <label>Inmate ID:</label>
+        <input type="number" id="inmateId" required><br><br>
+
+        <label>Holding Cell:</label>
+        <input type="text" id="holdingCell" required><br><br>
+
+        <label>Health Number:</label>
+        <input type="number" id="healthNum" required><br><br>
+
+        <label>Start Date:</label>
+        <input type="date" id="startDate" required><br><br>
+
+        <label>End Date:</label>
+        <input type="date" id="endDate" required><br><br>
+
+        <button type="submit">Add Inmate</button>
+    </form>
+
+    <div id="inmateFormMsg"></div>
+
+    <br>
+
+    <!-- Inmate Table -->
+    <h3>Current Inmates</h3>
+    <table id="inmateTable" border="1">
+        <thead>
+            <tr>
+                <th>Inmate ID</th>
+                <th>Holding Cell</th>
+                <th>HealthNum</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
